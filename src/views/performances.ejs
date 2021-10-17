@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Performance List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="row" id="performanceList">
+                <h3>Performance list</h3>
+                <span v-if="isLoading">Loading...</span>
+                <table v-if="hazPerformances">
+                    <thead>
+                    <tr>
+                        <th>Band</th>
+                        <th>Start</th>
+                        <th>Finish</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbodßy>
+                    <tr v-for="performance in performances">
+                        <td>{{ performance.band }}</td>
+                        <td>{{ performance.start }}</td>
+                        <td>{{ performance.finish }}</td>
+                    </tr>
+                    <tr>
+                        <button id="loadPerformances" @click="loadPerformances()" class="btn-small">Reload</button>
+                        &nbsp;
+                        <button id="writeFile" @click="writeFile()" class="btn-small">Write File</button>
+                    </tr>
+                    </tbodßy>
+                </table>
+                <p v-if="noPerformances">No Performance yet!</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
