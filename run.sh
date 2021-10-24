@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "";
-echo "/***** To make sure install packge successuflly, remove package-lock.json first! ****/ \n"
-rm -rf package-lock.json
 echo "/***** npm clean ****/ \n"
 npm run clean
 
